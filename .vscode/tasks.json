@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "build",
+            "command": "g++-12 main.cpp -I ./libs -o ./build/compro -std=c++23",
+        },
+        {
+            "type": "shell",
+            "label": "build main2",
+            "command": "g++-12 main2.cpp -I ./libs -o ./build/compro2 -std=c++23",
+        },
+        {
+            "type": "shell",
+            "label": "build compare_test",
+            "command": "g++-12 tools/compare_test.cpp generator.cpp -o ./build/compare_test -std=c++23",
+        },
+        {
+            "type": "shell",
+            "label": "compare test",
+            "command": "./build/compare_test",
+            "dependsOn": [
+                "build",
+                "build main2",
+                "build compare_test",
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "build validation_test",
+            "command": "g++-12 tools/validation_test.cpp generator.cpp validator.cpp -o ./build/validation_test -std=c++23",
+        },
+        {
+            "type": "shell",
+            "label": "validation test",
+            "command": "./build/validation_test",
+            "dependsOn": [
+                "build",
+                "build validation_test",
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "snippet update",
+            "command": "g++-12 tools/snippet.cpp -o ./build/snippet -std=c++23 && ./build/snippet",
+        }
+    ]
+}
