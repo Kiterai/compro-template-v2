@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "build",
-            "command": "g++-12 main.cpp -I ./libs -o ./build/compro -std=c++23",
+            "command": "g++-12 -g main.cpp -I ./libs -o ./build/compro -std=c++23",
         },
         {
             "type": "shell",
