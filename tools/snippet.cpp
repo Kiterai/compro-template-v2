@@ -13,6 +13,7 @@ string mls(string s) {
         auto it2 = find(it, s.end(), '\n');
         t += "\"";
         t += string_view(it, it2);
+        t.pop_back();
         t += "\",\n";
         if (it2 != s.end())
             it2++;
