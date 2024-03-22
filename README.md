@@ -1,10 +1,9 @@
-# Competitive-Programming Environment Template
+# Competitive-Programming Environment Template (v2)
 
 ## prerequisites
 
 - VSCode
-- CMake
-- MSVC Compiler
+- g++-12
 
 ## how to use
 
@@ -14,7 +13,14 @@
 4. run the task `snippet update`
 5. now you're ready to write code in `main.cpp` and can execute/debug it by F5
 
-## how to test
+## how to compare test
 
-1. write `gencase()` and `solve()` in `test.cpp`
-2. run task `test`
+1. write another code in `main2.cpp`
+2. write `gencase()` in `generator.cpp`
+3. run task `compare test`
+
+## how to validation test
+
+1. write `validation()` in `validator.cpp`
+2. write `gencase()` in `generator.cpp`
+3. run task `validation test`
