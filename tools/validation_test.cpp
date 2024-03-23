@@ -4,7 +4,8 @@
 #include <sstream>
 using namespace std;
 
-void gencase();
+int casen();
+void gencase(int _case);
 bool validation();
 
 const string testcase_fn = "tools/test/test.txt";
@@ -28,11 +29,11 @@ int main() {
 
     cout << "start validation test" << endl;
 
-    for (int _ = 0; _ < 100; _++) {
+    for (int _case = 0; _case < casen(); _case++) {
         {
             ofstream ofs(testcase_fn);
             cout.rdbuf(ofs.rdbuf());
-            gencase();
+            gencase(_case);
             cout.rdbuf(defout);
             if (ofs.tellp() == 0)
                 cout << "empty case" << endl;
