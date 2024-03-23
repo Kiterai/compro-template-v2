@@ -53,7 +53,9 @@ int main() {
                 cout << "WA" << endl;
                 cout << "testcase:\n"
                      << test << endl;
-                cout << "output:\n"
+                cout << "output main.cpp:\n"
+                     << out1 << endl;
+                cout << "output main2.cpp:\n"
                      << out2 << endl;
             }
         }
