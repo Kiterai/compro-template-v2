@@ -13,15 +13,12 @@ string mls(string s) {
         auto it2 = find(it, s.end(), '\n');
         t += "\"";
         t += string_view(it, it2);
-        t.pop_back();
+        if (t.back() == '\n' || t.back() == '\r')
+            t.pop_back();
         t += "\",\n";
         if (it2 != s.end())
             it2++;
         it = it2;
-    }
-    if (!t.empty()) {
-        t.pop_back();
-        t.pop_back();
     }
     return t;
 }
